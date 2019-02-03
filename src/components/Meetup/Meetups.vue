@@ -20,7 +20,7 @@
 						          </div>
 						        </v-card-title>
 						        <v-card-actions>
-						        	<v-btn flat>View Meetup
+						        	<v-btn flat to="/meetup/1">View Meetup
 						        		<v-icon left light>arrow_forward</v-icon>
 						        	</v-btn>
 						        </v-card-actions>

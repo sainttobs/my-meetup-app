@@ -12,11 +12,12 @@
 		</v-layout>
 		<v-layout row wrap class="mt-2">
 			<v-flex xs12>
-				<v-carousel>
+				<v-carousel style="cursor: pointer;">
 				    <v-carousel-item
 				      v-for="meetup in meetups"
 				      :key="meetup.id"
 				      :src="meetup.imageUrl"
+				      @click="onLoadMeetup(meetup.id)"
 				    >
 				    	<div class="title">
 				    		{{ meetup.title}}
@@ -41,6 +42,11 @@
 					{ imageUrl: 'https://travel.jumia.com/blog/ng/wp-content/uploads/2015/08/victoria-island-660x400.jpg', id: 'lag_meetup', title: 'Meetup in Lagos'},
 					{ imageUrl: 'https://2.bp.blogspot.com/-JwDu33EhI-Q/Vqk8OnUECPI/AAAAAAAA83Q/pG0vThluJZM/s1600/ibadan%2Bcity%2Bbeautiful.jpg', id: 'ib_meetup', title: 'Meetup in Ibadan'}
 				]
+			}
+		},
+		methods: {
+			onLoadMeetup(id) {
+				this.$router.push('/meetup/' + id)
 			}
 		}
 	}

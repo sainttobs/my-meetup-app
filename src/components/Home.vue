@@ -36,12 +36,9 @@
 
 <script>
 	export default {
-		data () {
-			return {
-				meetups: [
-					{ imageUrl: 'https://travel.jumia.com/blog/ng/wp-content/uploads/2015/08/victoria-island-660x400.jpg', id: 'lag_meetup', title: 'Meetup in Lagos'},
-					{ imageUrl: 'https://2.bp.blogspot.com/-JwDu33EhI-Q/Vqk8OnUECPI/AAAAAAAA83Q/pG0vThluJZM/s1600/ibadan%2Bcity%2Bbeautiful.jpg', id: 'ib_meetup', title: 'Meetup in Ibadan'}
-				]
+		computed: {
+			meetups () {
+				return this.$store.getters.featuredMeetups
 			}
 		},
 		methods: {

@@ -4,33 +4,43 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
-	state : {
-		loadedMeetups: [
-			{ imageUrl: 'https://travel.jumia.com/blog/ng/wp-content/uploads/2015/08/victoria-island-660x400.jpg', id: 'lag_meetup', title: 'Meetup in Lagos', date: '2018-02-07'},
-			{ imageUrl: 'https://2.bp.blogspot.com/-JwDu33EhI-Q/Vqk8OnUECPI/AAAAAAAA83Q/pG0vThluJZM/s1600/ibadan%2Bcity%2Bbeautiful.jpg', id: 'ib_meetup', title: 'Meetup in Ibadan', date: '2018-03-08'}
-		],
-		user: {
-			id: 'userID',
-			registeredMeetups: ['lag_meetup']
-		}
-	},
-	mutations: {},
-	actions: {},
-	getters: {
-		loadedMeetups (state) {
-			return state.loadedMeetups.sort((meetupA,meetupB) => {
-				return meetupA.date > meetupB.date
-			})
-		},
-		featuredMeetups (state, getters) {
-			return getters.loadedMeetups.slice(0,5)
-		},
-		loadedMeetup (state) {
-			return (meetupID) => {
-				return state.loadedMeetups.find((meetup) =>{
-					return meetup.id === meetupID
-				})
-			}
-		}
-	}
+  state: {
+    loadedMeetups: [
+      {
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg',
+        id: 'afajfjadfaadfa323',
+        title: 'Meetup in New York',
+        date: '2017-07-17'
+      },
+      {
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Paris_-_Blick_vom_gro%C3%9Fen_Triumphbogen.jpg',
+        id: 'aadsfhbkhlk1241',
+        title: 'Meetup in Paris',
+        date: '2017-07-19'
+      }
+    ],
+    user: {
+      id: 'ajaldslfalsk12',
+      registeredMeetups: ['aadsfhbkhlk1241']
+    }
+  },
+  mutations: {},
+  actions: {},
+  getters: {
+    loadedMeetups (state) {
+      return state.loadedMeetups.sort((meetupA, meetupB) => {
+        return meetupA.date > meetupB.date
+      })
+    },
+    featuredMeetups (state, getters) {
+      return getters.loadedMeetups.slice(0, 5)
+    },
+    loadedMeetup (state) {
+      return (meetupId) => {
+        return state.loadedMeetups.find((meetup) => {
+          return meetup.id === meetupId
+        })
+      }
+    }
+  }
 })

@@ -35,8 +35,12 @@ export const store = new Vuex.Store({
         title : payload.title,
         location: payload.location,
         imageUrl: payload.imageUrl,
-        description: payload.description
+        description: payload.description,
+        date: payload.date,
+        id: 'hshhhsxvbjs'
       }
+      // Reachout to firebase and store it
+      commit('createMeetup', meetup)
     }
   },
   getters: {

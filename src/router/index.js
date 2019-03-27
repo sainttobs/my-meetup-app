@@ -18,34 +18,35 @@ export default new Router({
       component: Home
     },
     {
-    	path: '/meetups',
-    	name: 'Meetups',
-    	component: Meetups
+      path: '/meetups',
+      name: 'Meetups',
+      component: Meetups
     },
     {
-    	path: '/meetup/new',
-    	name: 'CreateMeetup',
-    	component: CreateMeetup
+      path: '/meetup/new',
+      name: 'CreateMeetup',
+      component: CreateMeetup
     },
     {
-    	path: '/profile',
-    	name: 'Profile',
-    	component: Profile
+      path: '/meetups/:id',
+      name: 'Meetup',
+      props: true,
+      component: Meetup
     },
     {
-    	path: '/signup',
-    	name: 'Signup',
-    	component: Signup
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     },
     {
-        path: '/meetup/:id',
-        name: 'Meetup',
-        component: Meetup
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
     },
     {
-    	path: '/signin',
-    	name: 'Signin',
-    	component: Signin
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
     }
   ],
   mode: 'history'

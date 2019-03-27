@@ -1,26 +1,36 @@
 <template>
-	<v-container>
-		<v-layout row wrap>
-			<v-flex xs12>
-				<v-card>
-					<v-card-title>
-						<h2 class="primary--text">My Meetup</h2>
-					</v-card-title>
-					<v-img
-			          src="https://travel.jumia.com/blog/ng/wp-content/uploads/2015/08/victoria-island-660x400.jpg"
-			          height="400px"
-			          aspect-ratio="2.75"
-			        ></v-img>
-			        <v-card-text>
-			        	<div class="info--text">8th March 2019 - Where It Takes Place</div>
-			        	<div>This is the page for the forloop summit coming up on the 8th of March 2019. It is going to take place at Zone Tech Park. Time: 10:00AM - 5:00PM</div>
-			        </v-card-text>
-			        <v-card-actions>
-			        	<v-spacer></v-spacer>
-			        	<v-btn class="primary">Register</v-btn>
-			        </v-card-actions>
-				</v-card>
-			</v-flex>
-		</v-layout>
-	</v-container>
+  <v-container>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <v-card>
+          <v-card-title>
+            <h6 class="primary--text">{{ meetup.title }}</h6>
+          </v-card-title>
+          <v-card-media
+            :src="meetup.imageUrl"
+            height="400px"
+          ></v-card-media>
+          <v-card-text>
+            <div class="info--text">{{ meetup.date }}g - Where it takes place</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda at deserunt dolorum eius esse eum, expedita hic illo ipsum magni, nobis, odio odit quaerat quibusdam quis rem veritatis voluptas!</div>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn class="primary">Register</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
+
+<script>
+  export default {
+    props: ['id'],
+    computed: {
+      meetup () {
+        return this.$store.getters.loadedMeetup(this.id)
+      }
+    }
+  }
+</script>
